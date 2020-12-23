@@ -22,6 +22,8 @@
 		60FB8FF91B9B361600290979 /* SwiftyJSON-Class.json in Resources */ = {isa = PBXBuildFile; fileRef = 60FB8FEF1B9B361600290979 /* SwiftyJSON-Class.json */; };
 		60FB8FFC1B9B3F6400290979 /* ObjectiveC-Realm.json in Resources */ = {isa = PBXBuildFile; fileRef = 60FB8FFA1B9B3F6400290979 /* ObjectiveC-Realm.json */; };
 		60FB8FFD1B9B3F6400290979 /* Swift-Realm.json in Resources */ = {isa = PBXBuildFile; fileRef = 60FB8FFB1B9B3F6400290979 /* Swift-Realm.json */; };
+		68086F6825933E85003D85F1 /* Swift-MappableImp.json in Resources */ = {isa = PBXBuildFile; fileRef = 68086F6625933E85003D85F1 /* Swift-MappableImp.json */; };
+		68086F6925933E85003D85F1 /* Swift-MappableObj.json in Resources */ = {isa = PBXBuildFile; fileRef = 68086F6725933E85003D85F1 /* Swift-MappableObj.json */; };
 		98978FC11D5B6B19000C1846 /* Swift-Struct-Unbox.json in Resources */ = {isa = PBXBuildFile; fileRef = 98978FC01D5B6B19000C1846 /* Swift-Struct-Unbox.json */; };
 		A329A7ED1D5DA1ED00FB59E8 /* Java-Android Gson.json in Resources */ = {isa = PBXBuildFile; fileRef = A329A7EC1D5DA1ED00FB59E8 /* Java-Android Gson.json */; };
 		E20A0DAD1A1170F1003B3D62 /* NoodleLineNumberMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = E20A0DAA1A1170F1003B3D62 /* NoodleLineNumberMarker.m */; };
@@ -63,6 +65,8 @@
 		60FB8FEF1B9B361600290979 /* SwiftyJSON-Class.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "SwiftyJSON-Class.json"; path = "Supported Languages/SwiftyJSON-Class.json"; sourceTree = "<group>"; };
 		60FB8FFA1B9B3F6400290979 /* ObjectiveC-Realm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "ObjectiveC-Realm.json"; path = "Supported Languages/ObjectiveC-Realm.json"; sourceTree = "<group>"; };
 		60FB8FFB1B9B3F6400290979 /* Swift-Realm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Swift-Realm.json"; path = "Supported Languages/Swift-Realm.json"; sourceTree = "<group>"; };
+		68086F6625933E85003D85F1 /* Swift-MappableImp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Swift-MappableImp.json"; path = "Supported Languages/Swift-MappableImp.json"; sourceTree = "<group>"; };
+		68086F6725933E85003D85F1 /* Swift-MappableObj.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Swift-MappableObj.json"; path = "Supported Languages/Swift-MappableObj.json"; sourceTree = "<group>"; };
 		98978FC01D5B6B19000C1846 /* Swift-Struct-Unbox.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Swift-Struct-Unbox.json"; path = "Supported Languages/Swift-Struct-Unbox.json"; sourceTree = "<group>"; };
 		A329A7EC1D5DA1ED00FB59E8 /* Java-Android Gson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Java-Android Gson.json"; path = "Supported Languages/Java-Android Gson.json"; sourceTree = "<group>"; };
 		E20A0DA81A1170F1003B3D62 /* JSONExport-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JSONExport-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 		E2F07E8A1A0B3192004A1DAA /* Supported Languages */ = {
 			isa = PBXGroup;
 			children = (
+				68086F6625933E85003D85F1 /* Swift-MappableImp.json */,
+				68086F6725933E85003D85F1 /* Swift-MappableObj.json */,
 				E24E443021AA12B800435FE7 /* Swift-Outlaw.json */,
 				E24E443121AA12B800435FE7 /* Swift3-Mappable.json */,
 				166AF5CD1CEF6C3600516EDD /* Swift-Struct-Gloss.json */,
@@ -261,7 +267,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Ahmed Ali";
 				TargetAttributes = {
 					E2FA87B41A059AC100648EB6 = {
@@ -272,7 +278,7 @@
 			};
 			buildConfigurationList = E2FA87B01A059AC100648EB6 /* Build configuration list for PBXProject "JSONExport" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -298,7 +304,9 @@
 				60FB8FF01B9B361600290979 /* Java-Android Realm.json in Resources */,
 				A329A7ED1D5DA1ED00FB59E8 /* Java-Android Gson.json in Resources */,
 				60FB8FF31B9B361600290979 /* ObjectiveC-iOS.json in Resources */,
+				68086F6925933E85003D85F1 /* Swift-MappableObj.json in Resources */,
 				60FB8FFC1B9B3F6400290979 /* ObjectiveC-Realm.json in Resources */,
+				68086F6825933E85003D85F1 /* Swift-MappableImp.json in Resources */,
 				60FB8FF11B9B361600290979 /* Java-Android.json in Resources */,
 				E24E443321AA12B800435FE7 /* Swift3-Mappable.json in Resources */,
 				60FB8FF81B9B361600290979 /* Swift-Struct.json in Resources */,
@@ -362,6 +370,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -380,6 +389,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -410,6 +420,7 @@
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -417,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -435,6 +447,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -458,6 +471,7 @@
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -466,6 +480,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = JSONExport/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -473,8 +488,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "JSONExport/JSONExport-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -483,14 +498,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = JSONExport/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ahmed.ali.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "JSONExport/JSONExport-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

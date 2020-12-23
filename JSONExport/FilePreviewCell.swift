@@ -35,14 +35,14 @@ class FilePreviewCell: NSTableCellView, NSTextViewDelegate {
                     }
                     
                     if self.file.includeConstructors{
-                        self.constructors.state = NSControl.StateValue.on
+                        self.constructors.state = .on
                     }else{
-                        self.constructors.state = NSControl.StateValue.off
+                        self.constructors.state = .off
                     }
                     if self.file.includeUtilities{
-                        self.utilities.state = NSControl.StateValue.on
+                        self.utilities.state = .on
                     }else{
-                        self.utilities.state = NSControl.StateValue.off
+                        self.utilities.state = .off
                     }
                 }
             }else{
@@ -71,13 +71,12 @@ class FilePreviewCell: NSTableCellView, NSTextViewDelegate {
         scrollView.verticalRulerView = lineNumberView
         scrollView.rulersVisible = true
         textView.font = NSFont.userFixedPitchFont(ofSize: NSFont.smallSystemFontSize)
-        
     }
     
     @IBAction func toggleConstructors(_ sender: NSButtonCell)
     {
         if file != nil{
-            file.includeConstructors = (sender.state == NSControl.StateValue.off)
+            file.includeConstructors = (sender.state == .on)
             textView.string = file.toString()
             
         }
@@ -86,12 +85,14 @@ class FilePreviewCell: NSTableCellView, NSTextViewDelegate {
     @IBAction func toggleUtilityMethods(_ sender: NSButtonCell)
     {
         if file != nil{
-            file.includeUtilities = (sender.state == NSControl.StateValue.on)
+            file.includeUtilities = (sender.state == .on)
             textView.string = file.toString()
         }
     }
     
     func textDidChange(_ notification: Notification) {
-		file.fileContent = textView.string
+        file.fileContent = textView.string
     }
+    
+    
 }

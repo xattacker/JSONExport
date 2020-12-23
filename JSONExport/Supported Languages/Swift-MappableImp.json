@@ -1,5 +1,5 @@
 {
-    "modelStart": "{\n",
+    "modelStart": "\n{",
     "importForEachCustomType": "",
     "reservedKeywords": [
                          "abstract",
@@ -59,8 +59,19 @@
                          "description"
                          ],
     "booleanGetter": "",
-    "briefDescription": "Defines how your JSON objects can be mapped to Swift structures using the built-in NSJSONSerialization class",
+    "briefDescription": "Defines how your JSON objects can be mapped to Swift classes using the built-in NSJSONSerialization class",
     "utilityMethods": [
+                       {
+                       "comment": "",
+                       "signature": "\toverride func mapping(map: Map)",
+                       "bodyStart": "\n\t{\n",
+                       "body": "\t\tsuper.mapping(map: map)\n\n",
+                       "forEachProperty": "\t\tself.<!VarName!> <- map[\"<!JsonKeyName!>\"]\n",
+                       "forEachCustomTypeProperty": "\t\tself.<!VarName!> <- map[\"<!JsonKeyName!>\"]\n",
+                       "forEachArrayOfCustomTypeProperty": "\t\tself.<!VarName!> <- map[\"<!JsonKeyName!>\"]\n",
+                       "returnStatement": "",
+                       "bodyEnd": "\t}\n"
+                       }
                        ],
     "dataTypes": {
         "stringType": "String",
@@ -75,41 +86,22 @@
                                             "[",
                                             "]"
                                             ],
+    "defaultParentWithUtilityMethods": "MappableImp",
     "constructors": [
-                     {
-                     "fetchBasicTypeWithSpecialNeedsPropertyFromMap": "",
-                     "bodyStart": "{\n",
-                     "body": "",
-                     "bodyEnd": "\t}\n",
-                     "fetchBasicTypePropertyFromMap": "\t\tcase <!VarName!> = \"<!JsonKeyName!>\"\n",
-                     "signature": "\tenum CodingKeys: String, CodingKey ",
-                     "fetchArrayOfCustomTypePropertyFromMap": "\t\tcase <!VarName!> = \"<!JsonKeyName!>\"\n",
-                     "comment": "",
-                     "fetchCustomTypePropertyFromMap": "\t\tcase <!VarName!>\n"
-                     },
-                     {
-                     "fetchBasicTypeWithSpecialNeedsPropertyFromMap": "",
-                     "bodyStart": "{\n\t\tlet values = try decoder.container(keyedBy: CodingKeys.self)\n",                     
-                     "bodyEnd": "\t}\n",
-                     "fetchBasicTypePropertyFromMap": "\t\t<!VarName!> = try values.decodeIfPresent(<!VarType!>.self, forKey: .<!VarName!>)\n",
-                     "signature": "\tinit(from decoder: Decoder) throws ",
-                     "fetchArrayOfCustomTypePropertyFromMap": "\t\t<!VarName!> = try values.decodeIfPresent(<!VarType!>.self, forKey: .<!VarName!>)\n",
-                     "comment": "",
-                     "fetchCustomTypePropertyFromMap": "\t\t<!VarName!> = try <!VarType!>(from: decoder)\n"
-                     }
                      ],
-    "modelDefinition": "\nstruct <!ModelName!> : Codable ",
+    "modelDefinition": "\nclass <!ModelName!>",
     "genericType": "AnyObject",
     "getter": "",
     "setter": "",
+    "displayLangName": "Swift - MappableImp",
     "fileExtension": "swift",
-    "arrayType": "[<!ElementType!>]",
     "basicTypesWithSpecialFetchingNeeds": [
     ],
-    "displayLangName": "Swift - Struct - Codable",
-    "instanceVarDefinition": "\tlet <!VarName!> : <!VarType!>?\n",
+    "arrayType": "[<!ElementType!>]",
+    "modelDefinitionWithParent": "\n\nclass <!ModelName!>: <!ParentClass!>",
+    "instanceVarDefinition": "\n\tvar <!VarName!>: <!VarType!>?",
     "supportsFirstLineStatement": "false",
-    "modelEnd": "\n}",
-    "staticImports": "import Foundation",
+    "modelEnd": "}\n",
+    "staticImports": "import Foundation\nimport ObjectMapper",
     "langName": "Swift"
 }
