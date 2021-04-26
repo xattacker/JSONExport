@@ -95,7 +95,7 @@
                      "signature": "\tinit(from decoder: Decoder) throws ",
                      "fetchArrayOfCustomTypePropertyFromMap": "\t\t<!VarName!> = try values.decodeIfPresent(<!VarType!>.self, forKey: .<!VarName!>)\n",
                      "comment": "",
-                     "fetchCustomTypePropertyFromMap": "\t\t<!VarName!> = try <!VarType!>(from: decoder)\n"
+                     "fetchCustomTypePropertyFromMap": "\t\t<!VarName!> = try values.decodeIfPresent(<!VarType!>.self, forKey: .<!VarName!>)\n"
                      }
                      ],
     "modelDefinition": "\nstruct <!ModelName!> : Codable ",
