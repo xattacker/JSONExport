@@ -459,10 +459,7 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
         filesBuilder.parentClassName = parentClassName.stringValue
         return filesBuilder
     }
-    
-    
-    
-    
+
     //MARK: - NSTableViewDataSource
     func numberOfRows(in tableView: NSTableView) -> Int
     {
@@ -474,7 +471,18 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
     {
         let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier("fileCell"), owner: self) as! FilePreviewCell
         cell.setupCell(files[row], index: row)
+        cell.delegate = self
         
         return cell
+    }
+}
+
+
+extension ViewController: FilePreviewCellDelegate
+{
+    func onClassRenamed(file: FileRepresenter)
+    {
+        self.tableView.reloadData()
+        self.tableView.layout()
     }
 }

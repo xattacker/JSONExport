@@ -8,8 +8,16 @@
 
 import Cocoa
 
+
+protocol FilePreviewCellDelegate: AnyObject
+{
+    func onClassRenamed(file: FileRepresenter)
+}
+
+
 class FilePreviewCell: NSTableCellView, NSTextViewDelegate {
 
+    weak var delegate: FilePreviewCellDelegate?
     
     @IBOutlet var classNameLabel: NSTextFieldCell!
     @IBOutlet var constructors: NSButton!
@@ -24,7 +32,7 @@ class FilePreviewCell: NSTableCellView, NSTextViewDelegate {
     func setupCell(_ file: FileRepresenter, index: Int)
     {
         self.file = file
-        self.renameButton.isHidden = index != 0
+      //  self.renameButton.isHidden = index != 0
     }
     
     var file: FileRepresenter!{
@@ -99,7 +107,8 @@ class FilePreviewCell: NSTableCellView, NSTextViewDelegate {
         }
         
         self.file.className = new_name
-        self.updateCell()
+        //self.updateCell()
+        self.delegate?.onClassRenamed(file: self.file)
     }
     
     func textDidChange(_ notification: Notification) {
