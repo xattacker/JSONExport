@@ -17,41 +17,21 @@ class FilePreviewCell: NSTableCellView, NSTextViewDelegate {
     @IBOutlet var textView: NSTextView!
     @IBOutlet var scrollView: NSScrollView!
     
+    // rename class, add by xattacker on 20210428
+    @IBOutlet weak var renameButton: NSButton!
+    
+    // add by xattacker on 20210428
+    func setupCell(_ file: FileRepresenter, index: Int)
+    {
+        self.file = file
+        self.renameButton.isHidden = index != 0
+    }
     
     var file: FileRepresenter!{
         didSet{
-            if file != nil{
-                DispatchQueue.main.async {
-                    var fileName = self.file.className
-                    fileName += "."
-                    if self.file is HeaderFileRepresenter{
-                        fileName += self.file.lang.headerFileData.headerFileExtension
-                    }else{
-                        fileName += self.file.lang.fileExtension
-                    }
-                    self.classNameLabel.stringValue = fileName
-                    if(self.textView != nil){
-                        self.textView.string = self.file.toString()
-                    }
-                    
-                    if self.file.includeConstructors{
-                        self.constructors.state = .on
-                    }else{
-                        self.constructors.state = .off
-                    }
-                    if self.file.includeUtilities{
-                        self.utilities.state = .on
-                    }else{
-                        self.utilities.state = .off
-                    }
-                }
-            }else{
-                classNameLabel.stringValue = ""
-            }
+            updateCell()
         }
     }
-    
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -90,9 +70,71 @@ class FilePreviewCell: NSTableCellView, NSTextViewDelegate {
         }
     }
     
+    // add by xattacker on 20210428
+    @IBAction func renameAction(_ sender: NSButtonCell)
+    {
+        let alert = NSAlert()
+        alert.messageText = "Please enter new Class name"
+        alert.addButton(withTitle: "OK")
+        alert.addButton(withTitle: "Cancel")
+
+        let inputTextField = NSTextField(frame: NSRect(x: 0, y: 0, width: 300, height: 24))
+        inputTextField.placeholderString = alert.messageText
+        alert.accessoryView = inputTextField
+        let response = alert.runModal()
+        if response != NSApplication.ModalResponse.alertFirstButtonReturn
+        {
+            return
+        }
+        
+        let new_name = inputTextField.stringValue
+        if new_name.isEmpty
+        {
+            let alert = NSAlert()
+            alert.messageText = "Could not be empty !!"
+            alert.addButton(withTitle: "OK")
+            alert.runModal()
+           
+            return
+        }
+        
+        self.file.className = new_name
+        self.updateCell()
+    }
+    
     func textDidChange(_ notification: Notification) {
         file.fileContent = textView.string
     }
     
-    
+    private func updateCell()
+    {
+        if file != nil{
+            DispatchQueue.main.async {
+                var fileName = self.file.className
+                fileName += "."
+                if self.file is HeaderFileRepresenter{
+                    fileName += self.file.lang.headerFileData.headerFileExtension
+                }else{
+                    fileName += self.file.lang.fileExtension
+                }
+                self.classNameLabel.stringValue = fileName
+                if(self.textView != nil){
+                    self.textView.string = self.file.toString()
+                }
+                
+                if self.file.includeConstructors{
+                    self.constructors.state = .on
+                }else{
+                    self.constructors.state = .off
+                }
+                if self.file.includeUtilities{
+                    self.utilities.state = .on
+                }else{
+                    self.utilities.state = .off
+                }
+            }
+        }else{
+            classNameLabel.stringValue = ""
+        }
+    }
 }

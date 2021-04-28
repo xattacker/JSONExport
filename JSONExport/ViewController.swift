@@ -469,17 +469,12 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
         return files.count
     }
     
-    
     //MARK: - NSTableViewDelegate
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView?
     {
         let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier("fileCell"), owner: self) as! FilePreviewCell
-        let file = files[row]
-        cell.file = file
+        cell.setupCell(files[row], index: row)
         
         return cell
     }
-    
-    
-    
 }
