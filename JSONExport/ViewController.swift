@@ -470,7 +470,7 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView?
     {
         let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier("fileCell"), owner: self) as! FilePreviewCell
-        cell.setupCell(files[row], index: row)
+        cell.file = self.files[row]
         cell.delegate = self
         
         return cell
@@ -480,8 +480,25 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
 
 extension ViewController: FilePreviewCellDelegate
 {
-    func onClassRenamed(file: FileRepresenter)
+    func onClassRenamed(file: FileRepresenter, oldName: String, newName: String)
     {
+        for f in self.files
+        {
+            if f.className == oldName
+            {
+                f.className = newName
+            }
+            
+            for p in f.properties
+            {
+                if p.type == oldName
+                {
+                    p.type = newName
+                }
+            }
+        }
+        
+        
         self.tableView.reloadData()
         self.tableView.layout()
     }

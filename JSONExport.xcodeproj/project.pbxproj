@@ -24,6 +24,7 @@
 		60FB8FFD1B9B3F6400290979 /* Swift-Realm.json in Resources */ = {isa = PBXBuildFile; fileRef = 60FB8FFB1B9B3F6400290979 /* Swift-Realm.json */; };
 		68086F6825933E85003D85F1 /* Swift-MappableImp.json in Resources */ = {isa = PBXBuildFile; fileRef = 68086F6625933E85003D85F1 /* Swift-MappableImp.json */; };
 		68086F6925933E85003D85F1 /* Swift-MappableObj.json in Resources */ = {isa = PBXBuildFile; fileRef = 68086F6725933E85003D85F1 /* Swift-MappableObj.json */; };
+		6835A926263A4C8A00307737 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6835A925263A4C8A00307737 /* NSObject.swift */; };
 		98978FC11D5B6B19000C1846 /* Swift-Struct-Unbox.json in Resources */ = {isa = PBXBuildFile; fileRef = 98978FC01D5B6B19000C1846 /* Swift-Struct-Unbox.json */; };
 		A329A7ED1D5DA1ED00FB59E8 /* Java-Android Gson.json in Resources */ = {isa = PBXBuildFile; fileRef = A329A7EC1D5DA1ED00FB59E8 /* Java-Android Gson.json */; };
 		E20A0DAD1A1170F1003B3D62 /* NoodleLineNumberMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = E20A0DAA1A1170F1003B3D62 /* NoodleLineNumberMarker.m */; };
@@ -67,6 +68,7 @@
 		60FB8FFB1B9B3F6400290979 /* Swift-Realm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Swift-Realm.json"; path = "Supported Languages/Swift-Realm.json"; sourceTree = "<group>"; };
 		68086F6625933E85003D85F1 /* Swift-MappableImp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Swift-MappableImp.json"; path = "Supported Languages/Swift-MappableImp.json"; sourceTree = "<group>"; };
 		68086F6725933E85003D85F1 /* Swift-MappableObj.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Swift-MappableObj.json"; path = "Supported Languages/Swift-MappableObj.json"; sourceTree = "<group>"; };
+		6835A925263A4C8A00307737 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		98978FC01D5B6B19000C1846 /* Swift-Struct-Unbox.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Swift-Struct-Unbox.json"; path = "Supported Languages/Swift-Struct-Unbox.json"; sourceTree = "<group>"; };
 		A329A7EC1D5DA1ED00FB59E8 /* Java-Android Gson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Java-Android Gson.json"; path = "Supported Languages/Java-Android Gson.json"; sourceTree = "<group>"; };
 		E20A0DA81A1170F1003B3D62 /* JSONExport-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JSONExport-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				E2197C5C1A0EAEB900549D03 /* StringExtension.swift */,
 				E230BA2B1A113F8C00AE2054 /* FilePreviewCell.swift */,
 				E286D00A1A226ADE001AEF0D /* SharedUtilityMethods.swift */,
+				6835A925263A4C8A00307737 /* NSObject.swift */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				E28631531A158CFA0041B178 /* DataType.swift in Sources */,
 				E278F9C61A2149AC00306EFC /* HeaderFileData.swift in Sources */,
 				E278F9CA1A2152D800306EFC /* HeaderFileRepresenter.swift in Sources */,
+				6835A926263A4C8A00307737 /* NSObject.swift in Sources */,
 				E20A0DAD1A1170F1003B3D62 /* NoodleLineNumberMarker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,10 +486,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				INFOPLIST_FILE = JSONExport/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "ahmed.ali.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "JSONExport/JSONExport-Bridging-Header.h";
@@ -502,10 +506,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				INFOPLIST_FILE = JSONExport/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "ahmed.ali.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "JSONExport/JSONExport-Bridging-Header.h";

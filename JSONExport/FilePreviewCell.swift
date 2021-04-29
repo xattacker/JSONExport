@@ -11,7 +11,7 @@ import Cocoa
 
 protocol FilePreviewCellDelegate: AnyObject
 {
-    func onClassRenamed(file: FileRepresenter)
+    func onClassRenamed(file: FileRepresenter, oldName: String, newName: String)
 }
 
 
@@ -27,13 +27,6 @@ class FilePreviewCell: NSTableCellView, NSTextViewDelegate {
     
     // rename class, add by xattacker on 20210428
     @IBOutlet weak var renameButton: NSButton!
-    
-    // add by xattacker on 20210428
-    func setupCell(_ file: FileRepresenter, index: Int)
-    {
-        self.file = file
-      //  self.renameButton.isHidden = index != 0
-    }
     
     var file: FileRepresenter!{
         didSet{
@@ -88,6 +81,7 @@ class FilePreviewCell: NSTableCellView, NSTextViewDelegate {
 
         let inputTextField = NSTextField(frame: NSRect(x: 0, y: 0, width: 300, height: 24))
         inputTextField.placeholderString = alert.messageText
+        inputTextField.stringValue = self.file.className
         alert.accessoryView = inputTextField
         let response = alert.runModal()
         if response != NSApplication.ModalResponse.alertFirstButtonReturn
@@ -98,17 +92,21 @@ class FilePreviewCell: NSTableCellView, NSTextViewDelegate {
         let new_name = inputTextField.stringValue
         if new_name.isEmpty
         {
-            let alert = NSAlert()
-            alert.messageText = "Could not be empty !!"
-            alert.addButton(withTitle: "OK")
-            alert.runModal()
+            self.showAlert( "Could not be empty !!")
            
             return
         }
         
-        self.file.className = new_name
+        if !new_name.isValidClassName
+        {
+            self.showAlert( "Class name format invalid !!\n It should be begin with uppercase eng char and accept eng, digital and _")
+           
+            return
+        }
+        
+        //self.file.className = new_name
         //self.updateCell()
-        self.delegate?.onClassRenamed(file: self.file)
+        self.delegate?.onClassRenamed(file: self.file, oldName: self.file.className, newName: new_name)
     }
     
     func textDidChange(_ notification: Notification) {
@@ -145,5 +143,24 @@ class FilePreviewCell: NSTableCellView, NSTextViewDelegate {
         }else{
             classNameLabel.stringValue = ""
         }
+    }
+}
+
+
+public extension String
+{
+    var isValidClassName: Bool
+    {
+        var result = false
+        
+        if self.count > 0
+        {
+            // regular expression
+            let regex = #"[A-Z]+[A-Z0-9a-z_]*"#
+            let regexPred = NSPredicate(format: "SELF MATCHES %@", regex)
+            result = regexPred.evaluate(with: self)
+        }
+        
+        return result
     }
 }
