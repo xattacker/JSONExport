@@ -73,7 +73,7 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
     
     
     //Holds the currently selected language
-    var selectedLang : LangModel!
+    private var selectedLang : LangModel!
     
     //Returns the title of the selected language in the languagesPopup
     //Call only from main thread
@@ -482,42 +482,22 @@ extension ViewController: FilePreviewCellDelegate
 {
     func onClassRenamed(file: FileRepresenter, oldName: String, newName: String)
     {
-        let duplicated = self.files.first {
-            (file: FileRepresenter) in
-            return file.className == newName
-        }
+        let result = self.selectedLang.handleClassRename(self.files, oldName: oldName, newName: newName)
         
-        if duplicated != nil
+        switch result
         {
-            self.showAlert("Class name was duplicated")
-            
-            return
+            case .classDuplicated:
+                self.showAlert("Class name was duplicated !!")
+                return
+                
+            case .unsupported:
+                self.showAlert("Unsupported Language !!")
+                return
+                
+            default:
+                break
         }
         
-        
-        let old_array_type = "[" + oldName + "]"
-        let new_array_type = "[" + newName + "]"
-        
-        for f in self.files
-        {
-            if f.className == oldName
-            {
-                f.className = newName
-            }
-
-            for p in f.properties
-            {
-                if p.type == oldName
-                {
-                    p.type = newName
-                }
-                else if p.type == old_array_type
-                {
-                    p.type = new_array_type
-                }
-            }
-        }
-
         self.tableView.reloadData()
         self.tableView.layout()
         

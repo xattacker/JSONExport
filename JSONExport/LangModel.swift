@@ -7,6 +7,15 @@
 
 import Foundation
 
+
+enum LangRenameResult
+{
+    case succeed
+    
+    case classDuplicated
+    case unsupported
+}
+
 class LangModel{
 
 	var arrayType : String!
@@ -109,7 +118,60 @@ class LangModel{
             author = Author(fromDictionary: authorDictionary)
         }
 	}
+    
+    func handleClassRename(_ files: [FileRepresenter], oldName: String, newName: String) -> LangRenameResult
+    {
+        var status = LangRenameResult.succeed
+        var old_array_type = ""
+        var new_array_type = ""
+        
+        let duplicated = files.first {
+            (file: FileRepresenter) in
+            return file.className == newName
+        }
+        
+        if duplicated != nil
+        {
+            return .classDuplicated
+        }
+        
+        
+        switch self.langName.lowercased()
+        {
+            case "swift":
+                old_array_type = "[" + oldName + "]"
+                new_array_type = "[" + newName + "]"
+                break
+                
+            case "java":
+                old_array_type = oldName + "[]"
+                new_array_type = newName + "[]"
+                break
+                
+            default:
+                return .unsupported
+        }
+        
+        for f in files
+        {
+            if f.className == oldName
+            {
+                f.className = newName
+            }
 
-	
+            for p in f.properties
+            {
+                if p.type == oldName
+                {
+                    p.type = newName
+                }
+                else if p.type == old_array_type
+                {
+                    p.type = new_array_type
+                }
+            }
+        }
 
+        return status
+    }
 }
