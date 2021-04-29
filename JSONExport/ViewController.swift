@@ -482,24 +482,45 @@ extension ViewController: FilePreviewCellDelegate
 {
     func onClassRenamed(file: FileRepresenter, oldName: String, newName: String)
     {
+        let duplicated = self.files.first {
+            (file: FileRepresenter) in
+            return file.className == newName
+        }
+        
+        if duplicated != nil
+        {
+            self.showAlert("Class name was duplicated")
+            
+            return
+        }
+        
+        
+        let old_array_type = "[" + oldName + "]"
+        let new_array_type = "[" + newName + "]"
+        
         for f in self.files
         {
             if f.className == oldName
             {
                 f.className = newName
             }
-            
+
             for p in f.properties
             {
                 if p.type == oldName
                 {
                     p.type = newName
                 }
+                else if p.type == old_array_type
+                {
+                    p.type = new_array_type
+                }
             }
         }
-        
-        
+
         self.tableView.reloadData()
         self.tableView.layout()
+        
+        self.toast(message: "Rename Succees")
     }
 }
