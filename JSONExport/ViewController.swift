@@ -79,7 +79,7 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
     //Call only from main thread
     var selectedLanguageName : String
     {
-        assert(Thread.isMainThread);
+        assert(Thread.isMainThread)
         return languagesPopup.titleOfSelectedItem!
     }
     
@@ -109,7 +109,6 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
         let langNames = Array(langs.keys).sorted()
         languagesPopup.removeAllItems()
         languagesPopup.addItems(withTitles: langNames)
-        
     }
     
     /**
@@ -123,7 +122,6 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
         scrollView.verticalRulerView = lineNumberView
         scrollView.rulersVisible = true
         sourceText.font = NSFont.userFixedPitchFont(ofSize: NSFont.smallSystemFontSize)
-        
     }
     
     /**
@@ -178,10 +176,9 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
 
     
     // MARK: - parse the json file
-    func parseJSONData(jsonData: Data!)
+    func parseJSONData(jsonData: Data)
     {
         let jsonString = String(data: jsonData, encoding: .utf8)
-        
         sourceText.string = jsonString!
     }
     
@@ -346,7 +343,7 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
     func showError(_ error: NSError!)
     {
         if error == nil{
-            return;
+            return
         }
         let alert = NSAlert(error: error)
         alert.runModal()
@@ -357,7 +354,6 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
      */
     func showErrorStatus(_ errorMessage: String)
     {
-        
         statusTextField.textColor = NSColor.red
         statusTextField.stringValue = errorMessage
     }
@@ -367,7 +363,6 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
      */
     func showSuccessStatus(_ successMessage: String)
     {
-        
         statusTextField.textColor = NSColor.green
         statusTextField.stringValue = successMessage
     }
@@ -389,7 +384,7 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
                 self.files.removeAll(keepingCapacity: false)
                 self.tableView.reloadData()
             }
-            return;
+            return
         }
         var rootClassName = classNameField.stringValue
         if rootClassName.count == 0{
@@ -453,7 +448,7 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
         let filesBuilder = FilesContentBuilder.instance
         filesBuilder.includeConstructors = (generateConstructors.state == NSControl.StateValue.on)
         filesBuilder.includeUtilities = (generateUtilityMethods.state == NSControl.StateValue.on)
-        filesBuilder.firstLine = firstLineField.stringValue
+        filesBuilder.firstLine = (self.selectedLang.firstLinePrefix ?? "") + firstLineField.stringValue
         filesBuilder.lang = selectedLang!
         filesBuilder.classPrefix = classPrefixField.stringValue
         filesBuilder.parentClassName = parentClassName.stringValue

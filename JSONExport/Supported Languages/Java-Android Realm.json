@@ -16,6 +16,7 @@
     },
     "supportsFirstLineStatement" : "true",
     "firstLineHint" : "Package name",
+    "firstLinePrefix" : "package ",
     "staticImports": "import org.json.*;\nimport io.realm.*;\nimport io.realm.annotations.*;\n",
     "importForEachCustomType": "",
     "modelDefinition": "\n@RealmClass\npublic class <!ModelName!> extends RealmObject",

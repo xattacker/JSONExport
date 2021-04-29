@@ -16,6 +16,7 @@
     },
     "supportsFirstLineStatement" : "true",
     "firstLineHint" : "Package name",
+    "firstLinePrefix" : "package ",
     "staticImports": "import org.json.*;\nimport java.util.*;\nimport com.google.gson.annotations.SerializedName;\n",
     "importForEachCustomType": "",
     "modelDefinition": "\npublic class <!ModelName!>",

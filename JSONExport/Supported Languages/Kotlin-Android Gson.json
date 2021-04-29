@@ -1,0 +1,63 @@
+{
+    "langName": "Kotlin",
+    "displayLangName": "Kotlin Gson for Android",
+    "briefDescription" : "Defines how your JSON objects can be mapped to Kotlin classes using Google Gson.",
+    "fileExtension": "kt",
+    "genericType": "Object",
+    "arrayType": "Array<<!ElementType!>>",
+    "dataTypes": {
+        "intType": "Int",
+        "boolType": "Boolean",
+        "characterType": "Char",
+        "floatType": "Float",
+        "longType": "Long",
+        "doubleType": "Double",
+        "stringType": "String"
+    },
+    "supportsFirstLineStatement" : "true",
+    "firstLineHint" : "Package name",
+    "firstLinePrefix" : "package ",
+    "staticImports": "import java.util.*\nimport com.google.gson.annotations.SerializedName\n",
+    "importForEachCustomType": "",
+    "modelDefinition": "\nclass <!ModelName!>",
+    "modelDefinitionWithParent" : "\nclass <!ModelName!> : <!ParentClass!>()",
+    "modelStart": "\n{",
+    "modelEnd": "}\n",
+    "instanceVarDefinition": "\n\t@SerializedName(\"<!JsonKeyName!>\")\n\tvar <!VarName!>: <!VarType!>? = null\n",
+    "setter" : "",
+    "getter" : "",
+    "booleanGetter" : "",
+    "reservedKeywords" : ["abstract", "assert", "boolean", "break", "byte", "case", "catch", "char", "class", "const", "continue", "default", "do", "double", "else", "enum", "extends", "false", "final", "finally", "float", "for", "goto", "if", "implements", "import", "instanceof", "int", "interface", "long", "native", "new", "null", "package", "private", "protected", "public", "return", "short", "static", "super", "switch", "synchronized", "this", "throw", "throws", "transient", "true", "try", "void", "volatile", "while", "constructor", "var", "val"],
+    "wordsToRemoveToGetArrayElementsType": [
+                                            "Array<",
+                                            ">"
+                                            ],
+    "basicTypesWithSpecialFetchingNeeds" : [
+                                            "Object",
+                                            "String",
+                                            "float"
+                                            ],
+    "basicTypesWithSpecialFetchingNeedsReplacements" : [
+                                                        "",
+                                                        "String",
+                                                        "Double"
+                                                        ],
+    "basicTypesWithSpecialFetchingNeedsTypeCast" : [
+                                                        "",
+                                                        "",
+                                                        "float"
+                                                        ],
+    "constructors": [
+                     {
+                     "fetchBasicTypeWithSpecialNeedsPropertyFromMap": "",
+                     "bodyStart": "\n\t{",
+                     "bodyEnd": "\n\t}\n",
+                     "fetchBasicTypePropertyFromMap": "",
+                     "signature": "\tconstructor()",
+                     "fetchArrayOfCustomTypePropertyFromMap": "",
+                     "comment": "",
+                     "fetchCustomTypePropertyFromMap": ""
+                     }
+                     ],
+    "utilityMethods": []
+}

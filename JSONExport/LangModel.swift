@@ -47,6 +47,7 @@ class LangModel{
 	var staticImports : String!
 	var supportsFirstLineStatement : Bool!
     var firstLineHint : String!
+    var firstLinePrefix : String? // add by xattacker on 20210429
 	var utilityMethods : [UtilityMethod]!
     var reservedKeywords : [String]!
 	var wordsToRemoveToGetArrayElementsType : [String]!
@@ -99,6 +100,8 @@ class LangModel{
 		staticImports = dictionary["staticImports"] as? String
 		supportsFirstLineStatement = (dictionary["supportsFirstLineStatement"] as? NSString)?.boolValue
         firstLineHint = dictionary["firstLineHint"] as? String
+        firstLinePrefix = dictionary["firstLinePrefix"] as? String
+        
 		utilityMethods = [UtilityMethod]()
 		if let utilityMethodsArray = dictionary["utilityMethods"] as? [NSDictionary]{
 			 for dic in utilityMethodsArray{
@@ -146,6 +149,11 @@ class LangModel{
             case "java":
                 old_array_type = oldName + "[]"
                 new_array_type = newName + "[]"
+                break
+                
+            case "kotlin":
+                old_array_type = "Array<" + oldName + ">"
+                new_array_type = "Array<" + newName + ">"
                 break
                 
             default:
