@@ -34,6 +34,7 @@ Currently you can convert your JSON object to one of the following languages:
 13. Objective-C - MAC.
 14. Objective-C - CoreData.
 15. Objective-C for [Realm](http://realm.io) iOS.
+16. Kotlin Gson for Android.
 
 
 
