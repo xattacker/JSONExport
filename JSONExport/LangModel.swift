@@ -124,10 +124,6 @@ class LangModel{
     
     func handleClassRename(_ files: [FileRepresenter], oldName: String, newName: String) -> LangRenameResult
     {
-        var status = LangRenameResult.succeed
-        var old_array_type = ""
-        var new_array_type = ""
-        
         let duplicated = files.first {
             (file: FileRepresenter) in
             return file.className == newName
@@ -139,26 +135,8 @@ class LangModel{
         }
         
         
-        switch self.langName.lowercased()
-        {
-            case "swift":
-                old_array_type = "[" + oldName + "]"
-                new_array_type = "[" + newName + "]"
-                break
-                
-            case "java":
-                old_array_type = oldName + "[]"
-                new_array_type = newName + "[]"
-                break
-                
-            case "kotlin":
-                old_array_type = "Array<" + oldName + ">"
-                new_array_type = "Array<" + newName + ">"
-                break
-                
-            default:
-                return .unsupported
-        }
+        let old_array_type = self.arrayType.replacingOccurrences(of: elementType, with: oldName)
+        let new_array_type = self.arrayType.replacingOccurrences(of: elementType, with: newName)
         
         for f in files
         {
@@ -173,13 +151,13 @@ class LangModel{
                 {
                     p.type = newName
                 }
-                else if p.type == old_array_type
+                else if p.isArray && p.type == old_array_type
                 {
                     p.type = new_array_type
                 }
             }
         }
 
-        return status
+        return .succeed
     }
 }

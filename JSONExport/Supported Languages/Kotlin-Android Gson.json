@@ -17,7 +17,7 @@
     "supportsFirstLineStatement" : "true",
     "firstLineHint" : "Package name",
     "firstLinePrefix" : "package ",
-    "staticImports": "import java.util.*\nimport com.google.gson.annotations.SerializedName\n",
+    "staticImports": "import com.google.gson.annotations.SerializedName\n",
     "importForEachCustomType": "",
     "modelDefinition": "\nclass <!ModelName!>",
     "modelDefinitionWithParent" : "\nclass <!ModelName!> : <!ParentClass!>()",
