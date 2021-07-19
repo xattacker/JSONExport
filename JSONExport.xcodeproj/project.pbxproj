@@ -29,6 +29,8 @@
 		6835A92A263AA78900307737 /* Kotlin-Android Gson.json in Resources */ = {isa = PBXBuildFile; fileRef = 6835A929263AA78800307737 /* Kotlin-Android Gson.json */; };
 		98978FC11D5B6B19000C1846 /* Swift-Struct-Unbox.json in Resources */ = {isa = PBXBuildFile; fileRef = 98978FC01D5B6B19000C1846 /* Swift-Struct-Unbox.json */; };
 		A329A7ED1D5DA1ED00FB59E8 /* Java-Android Gson.json in Resources */ = {isa = PBXBuildFile; fileRef = A329A7EC1D5DA1ED00FB59E8 /* Java-Android Gson.json */; };
+		C5CA6A4126A58ABB00EE8E71 /* Swift-Codable-Unwrapped.json in Resources */ = {isa = PBXBuildFile; fileRef = C5CA6A4026A58ABB00EE8E71 /* Swift-Codable-Unwrapped.json */; };
+		C5CA6A4326A58AE600EE8E71 /* Swift-CPBaseModel.json in Resources */ = {isa = PBXBuildFile; fileRef = C5CA6A4226A58AE600EE8E71 /* Swift-CPBaseModel.json */; };
 		E20A0DAD1A1170F1003B3D62 /* NoodleLineNumberMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = E20A0DAA1A1170F1003B3D62 /* NoodleLineNumberMarker.m */; };
 		E20A0DAE1A1170F1003B3D62 /* NoodleLineNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = E20A0DAC1A1170F1003B3D62 /* NoodleLineNumberView.m */; };
 		E21292581A0C58CF0015027D /* SharedConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21292571A0C58CF0015027D /* SharedConstants.swift */; };
@@ -74,6 +76,8 @@
 		6835A929263AA78800307737 /* Kotlin-Android Gson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Kotlin-Android Gson.json"; path = "Supported Languages/Kotlin-Android Gson.json"; sourceTree = "<group>"; };
 		98978FC01D5B6B19000C1846 /* Swift-Struct-Unbox.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Swift-Struct-Unbox.json"; path = "Supported Languages/Swift-Struct-Unbox.json"; sourceTree = "<group>"; };
 		A329A7EC1D5DA1ED00FB59E8 /* Java-Android Gson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Java-Android Gson.json"; path = "Supported Languages/Java-Android Gson.json"; sourceTree = "<group>"; };
+		C5CA6A4026A58ABB00EE8E71 /* Swift-Codable-Unwrapped.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Swift-Codable-Unwrapped.json"; sourceTree = "<group>"; };
+		C5CA6A4226A58AE600EE8E71 /* Swift-CPBaseModel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Swift-CPBaseModel.json"; path = "Supported Languages/Swift-CPBaseModel.json"; sourceTree = "<group>"; };
 		E20A0DA81A1170F1003B3D62 /* JSONExport-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JSONExport-Bridging-Header.h"; sourceTree = "<group>"; };
 		E20A0DA91A1170F1003B3D62 /* NoodleLineNumberMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoodleLineNumberMarker.h; sourceTree = "<group>"; };
 		E20A0DAA1A1170F1003B3D62 /* NoodleLineNumberMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoodleLineNumberMarker.m; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 		E2F07E8A1A0B3192004A1DAA /* Supported Languages */ = {
 			isa = PBXGroup;
 			children = (
+				C5CA6A4226A58AE600EE8E71 /* Swift-CPBaseModel.json */,
+				C5CA6A4026A58ABB00EE8E71 /* Swift-Codable-Unwrapped.json */,
 				6835A929263AA78800307737 /* Kotlin-Android Gson.json */,
 				A329A7EC1D5DA1ED00FB59E8 /* Java-Android Gson.json */,
 				60FB8FE61B9B361600290979 /* Java-Android Realm.json */,
@@ -311,6 +317,7 @@
 				A329A7ED1D5DA1ED00FB59E8 /* Java-Android Gson.json in Resources */,
 				60FB8FF31B9B361600290979 /* ObjectiveC-iOS.json in Resources */,
 				68086F6925933E85003D85F1 /* Swift-MappableObj.json in Resources */,
+				C5CA6A4126A58ABB00EE8E71 /* Swift-Codable-Unwrapped.json in Resources */,
 				60FB8FFC1B9B3F6400290979 /* ObjectiveC-Realm.json in Resources */,
 				68086F6825933E85003D85F1 /* Swift-MappableImp.json in Resources */,
 				60FB8FF11B9B361600290979 /* Java-Android.json in Resources */,
@@ -319,6 +326,7 @@
 				98978FC11D5B6B19000C1846 /* Swift-Struct-Unbox.json in Resources */,
 				60FB8FFD1B9B3F6400290979 /* Swift-Realm.json in Resources */,
 				60FB8FF71B9B361600290979 /* Swift-Mappable.json in Resources */,
+				C5CA6A4326A58AE600EE8E71 /* Swift-CPBaseModel.json in Resources */,
 				6835A92A263AA78900307737 /* Kotlin-Android Gson.json in Resources */,
 				60FB8FF61B9B361600290979 /* Swift-CoreData.json in Resources */,
 				60FB8FF91B9B361600290979 /* SwiftyJSON-Class.json in Resources */,
