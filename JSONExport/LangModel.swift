@@ -48,6 +48,7 @@ class LangModel{
 	var supportsFirstLineStatement : Bool!
     var firstLineHint : String!
     var firstLinePrefix : String? // add by xattacker on 20210429
+    var firstLineSuffix : String? // add by xattacker on 20230615
 	var utilityMethods : [UtilityMethod]!
     var reservedKeywords : [String]!
 	var wordsToRemoveToGetArrayElementsType : [String]!
@@ -101,6 +102,7 @@ class LangModel{
 		supportsFirstLineStatement = (dictionary["supportsFirstLineStatement"] as? NSString)?.boolValue
         firstLineHint = dictionary["firstLineHint"] as? String
         firstLinePrefix = dictionary["firstLinePrefix"] as? String
+        firstLineSuffix = dictionary["firstLineSuffix"] as? String
         
 		utilityMethods = [UtilityMethod]()
 		if let utilityMethodsArray = dictionary["utilityMethods"] as? [NSDictionary]{

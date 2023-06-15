@@ -448,10 +448,22 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
         let filesBuilder = FilesContentBuilder.instance
         filesBuilder.includeConstructors = (generateConstructors.state == NSControl.StateValue.on)
         filesBuilder.includeUtilities = (generateUtilityMethods.state == NSControl.StateValue.on)
-        filesBuilder.firstLine = (self.selectedLang.firstLinePrefix ?? "") + firstLineField.stringValue
+        
+        if !self.firstLineField.stringValue.isEmpty
+        {
+            filesBuilder.firstLine = (self.selectedLang.firstLinePrefix ?? "") +
+                                     firstLineField.stringValue +
+                                     (self.selectedLang.firstLineSuffix ?? "")
+        }
+        else
+        {
+            filesBuilder.firstLine = ""
+        }
+        
         filesBuilder.lang = selectedLang!
         filesBuilder.classPrefix = classPrefixField.stringValue
         filesBuilder.parentClassName = parentClassName.stringValue
+        
         return filesBuilder
     }
 

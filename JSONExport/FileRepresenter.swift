@@ -129,7 +129,7 @@ class FileRepresenter{
     */
     func appendFirstLineStatement()
     {
-        if lang.supportsFirstLineStatement != nil && lang.supportsFirstLineStatement! && firstLine.count > 0{
+        if lang.supportsFirstLineStatement == true && firstLine.count > 0 {
             fileContent += "\(firstLine)\n\n"
         }
     }
