@@ -102,6 +102,6 @@
     "instanceVarDefinition": "\n\tvar <!VarName!>: <!VarType!>?",
     "supportsFirstLineStatement": "false",
     "modelEnd": "}\n",
-    "staticImports": "import Foundation",
+    "staticImports": "import Foundation\nimport ObjectMapper",
     "langName": "Swift"
 }
