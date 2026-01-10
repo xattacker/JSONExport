@@ -1,5 +1,5 @@
 //
-//  FileGenerator.swift
+//  FileContentBuilder.swift
 //  JSONExport
 //
 //  Created by Ahmed on 11/14/14.

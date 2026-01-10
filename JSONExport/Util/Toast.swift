@@ -1,5 +1,5 @@
 //
-//  toast.swift
+//  Toast.swift
 //  toastKit
 //
 //  Created by Jacob Gold on 8/11/17.
