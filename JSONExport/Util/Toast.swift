@@ -9,9 +9,11 @@
 import Cocoa
 
 // Keep track of existing toast, if there is one
+@MainActor
 fileprivate var currentToast: NSView?
 
 // MARK: - External calls
+@MainActor
 extension NSViewController {
 //    // This makes a toast with an image, message, and title
 //    public func toast(message: String, title: String, image: NSImage = NSImage(named: NSImage.Name.caution)!) {

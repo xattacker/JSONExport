@@ -8,7 +8,7 @@
 
 import Cocoa
 
-
+@MainActor
 extension NSObject
 {
     func showAlert(_ message: String)

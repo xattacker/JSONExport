@@ -180,17 +180,17 @@ func stringByRemovingControlCharacters(_ string: String) -> String
 
 
 
-func runOnBackground(_ task: @escaping () -> Void)
+func runOnBackground(_ task: @escaping @Sendable () -> Void)
 {
     DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
         task();
     }
 }
 
-func runOnUiThread(_ task: @escaping () -> Void)
+func runOnUiThread(_ task: @escaping @MainActor () -> Void)
 {
-    DispatchQueue.main.async(execute: { () -> Void in
-        task();
-    })
+    DispatchQueue.main.async {
+        task()
+    }
 }
 

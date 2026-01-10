@@ -9,12 +9,13 @@
 import Cocoa
 
 
+@MainActor
 protocol FilePreviewCellDelegate: AnyObject
 {
     func onClassRenamed(file: FileRepresenter, oldName: String, newName: String)
 }
 
-
+@MainActor
 class FilePreviewCell: NSTableCellView, NSTextViewDelegate {
 
     weak var delegate: FilePreviewCellDelegate?

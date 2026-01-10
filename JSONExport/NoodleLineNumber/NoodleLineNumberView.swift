@@ -38,6 +38,7 @@ import Cocoa
 private let DEFAULT_THICKNESS: CGFloat = 22.0
 private let RULER_MARGIN: CGFloat = 5.0
 
+@MainActor
 class NoodleLineNumberView: NSRulerView {
     // Array of character indices for the beginning of each line
     private var _lineIndices: NSMutableArray = NSMutableArray()

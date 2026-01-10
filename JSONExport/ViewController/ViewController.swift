@@ -33,6 +33,7 @@
 
 import Cocoa
 
+@MainActor
 class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTableViewDelegate, NSTableViewDataSource, NSTextViewDelegate {
     
     //Shows the list of files' preview
@@ -194,7 +195,7 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
 		oPanel.prompt = "Choose JSON file"
 		
 		oPanel.beginSheetModal(for: self.view.window!) { button in
-			if button.rawValue == NSFileHandlingPanelOKButton {
+			if button == .OK {
 				let jsonPath = oPanel.urls.first!.path
 				let fileHandle = FileHandle(forReadingAtPath: jsonPath)
 				let urlStr:String  = oPanel.urls.first!.lastPathComponent
@@ -263,7 +264,7 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
     
     
     //MARK: - NSUserNotificationCenterDelegate
-    func userNotificationCenter(_ center: NSUserNotificationCenter,
+    nonisolated func userNotificationCenter(_ center: NSUserNotificationCenter,
                                 shouldPresent notification: NSUserNotification) -> Bool
     {
         return true
@@ -281,7 +282,7 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
         openPanel.canCreateDirectories = true
         openPanel.prompt = "Choose"
 		openPanel.beginSheetModal(for: self.view.window!){ button in
-			if button.rawValue == NSFileHandlingPanelOKButton{
+			if button == .OK{
 				self.saveToPath(openPanel.url!.path)
 				self.showDoneSuccessfully()
 			}
@@ -376,7 +377,7 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
     func generateClasses()
     {
         saveButton.isEnabled = false
-        var str = sourceText.string
+        let str = sourceText.string
         
         if str.count == 0{
             runOnUiThread{
@@ -392,9 +393,9 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
         }
         sourceText.isEditable = false
         //Do the lengthy process in background, it takes time with more complicated JSONs
-        runOnBackground {
-            str = stringByRemovingControlCharacters(str)
-            if let data = str.data(using: String.Encoding.utf8){
+        runOnBackground { [str] in
+            let cleanedStr = stringByRemovingControlCharacters(str)
+            if let data = cleanedStr.data(using: String.Encoding.utf8){
                 var error : NSError?
                 do {
                     let jsonData : Any = try JSONSerialization.jsonObject(with: data, options: [])
