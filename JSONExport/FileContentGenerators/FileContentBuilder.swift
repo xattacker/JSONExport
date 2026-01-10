@@ -11,26 +11,17 @@ import Foundation
 /**
 Singleton used to build the file content with the current configurations
 */
-class FilesContentBuilder{
+@MainActor
+final class FilesContentBuilder {
     
     private init() {}
+
+    // Concurrency-safe singleton
+    static let shared = FilesContentBuilder()
+
+    // Backwards-compatible accessor for legacy callers
+    class var instance: FilesContentBuilder { shared }
     
-    /**
-     Lazely load and return the singleton instance of the FilesContentBuilder
-     */
-    struct Static {
-        static var onceToken : Int = 0
-        static var instance : FilesContentBuilder? = nil
-    }
-    class var instance : FilesContentBuilder {
-        
-        _ = FilesContentBuilder.__once
-        return Static.instance!
-    }
-    
-    private static var __once: () = {
-            Static.instance = FilesContentBuilder()
-        }()
     /**
     The prefix used for first level type names (and file names as well)
     */
