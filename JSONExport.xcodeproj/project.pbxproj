@@ -22,6 +22,8 @@
 		60FB8FF91B9B361600290979 /* SwiftyJSON-Class.json in Resources */ = {isa = PBXBuildFile; fileRef = 60FB8FEF1B9B361600290979 /* SwiftyJSON-Class.json */; };
 		60FB8FFC1B9B3F6400290979 /* ObjectiveC-Realm.json in Resources */ = {isa = PBXBuildFile; fileRef = 60FB8FFA1B9B3F6400290979 /* ObjectiveC-Realm.json */; };
 		60FB8FFD1B9B3F6400290979 /* Swift-Realm.json in Resources */ = {isa = PBXBuildFile; fileRef = 60FB8FFB1B9B3F6400290979 /* Swift-Realm.json */; };
+		658159202F11F7F000D12F25 /* NoodleLineNumberMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6581591E2F11F7F000D12F25 /* NoodleLineNumberMarker.swift */; };
+		658159212F11F7F000D12F25 /* NoodleLineNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6581591F2F11F7F000D12F25 /* NoodleLineNumberView.swift */; };
 		68086F6825933E85003D85F1 /* Swift-MappableImp.json in Resources */ = {isa = PBXBuildFile; fileRef = 68086F6625933E85003D85F1 /* Swift-MappableImp.json */; };
 		68086F6925933E85003D85F1 /* Swift-MappableObj.json in Resources */ = {isa = PBXBuildFile; fileRef = 68086F6725933E85003D85F1 /* Swift-MappableObj.json */; };
 		6835A926263A4C8A00307737 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6835A925263A4C8A00307737 /* NSObject.swift */; };
@@ -31,8 +33,6 @@
 		A329A7ED1D5DA1ED00FB59E8 /* Java-Android Gson.json in Resources */ = {isa = PBXBuildFile; fileRef = A329A7EC1D5DA1ED00FB59E8 /* Java-Android Gson.json */; };
 		C5CA6A4126A58ABB00EE8E71 /* Swift-Codable-Unwrapped.json in Resources */ = {isa = PBXBuildFile; fileRef = C5CA6A4026A58ABB00EE8E71 /* Swift-Codable-Unwrapped.json */; };
 		C5CA6A4326A58AE600EE8E71 /* Swift-CPBaseModel.json in Resources */ = {isa = PBXBuildFile; fileRef = C5CA6A4226A58AE600EE8E71 /* Swift-CPBaseModel.json */; };
-		E20A0DAD1A1170F1003B3D62 /* NoodleLineNumberMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = E20A0DAA1A1170F1003B3D62 /* NoodleLineNumberMarker.m */; };
-		E20A0DAE1A1170F1003B3D62 /* NoodleLineNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = E20A0DAC1A1170F1003B3D62 /* NoodleLineNumberView.m */; };
 		E21292581A0C58CF0015027D /* SharedConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21292571A0C58CF0015027D /* SharedConstants.swift */; };
 		E2197C5D1A0EAEB900549D03 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2197C5C1A0EAEB900549D03 /* StringExtension.swift */; };
 		E22BA2C51A162B54005CE143 /* FileContentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22BA2C41A162B54005CE143 /* FileContentBuilder.swift */; };
@@ -69,6 +69,8 @@
 		60FB8FEF1B9B361600290979 /* SwiftyJSON-Class.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "SwiftyJSON-Class.json"; path = "Supported Languages/SwiftyJSON-Class.json"; sourceTree = "<group>"; };
 		60FB8FFA1B9B3F6400290979 /* ObjectiveC-Realm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "ObjectiveC-Realm.json"; path = "Supported Languages/ObjectiveC-Realm.json"; sourceTree = "<group>"; };
 		60FB8FFB1B9B3F6400290979 /* Swift-Realm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Swift-Realm.json"; path = "Supported Languages/Swift-Realm.json"; sourceTree = "<group>"; };
+		6581591E2F11F7F000D12F25 /* NoodleLineNumberMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoodleLineNumberMarker.swift; sourceTree = "<group>"; };
+		6581591F2F11F7F000D12F25 /* NoodleLineNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoodleLineNumberView.swift; sourceTree = "<group>"; };
 		68086F6625933E85003D85F1 /* Swift-MappableImp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Swift-MappableImp.json"; path = "Supported Languages/Swift-MappableImp.json"; sourceTree = "<group>"; };
 		68086F6725933E85003D85F1 /* Swift-MappableObj.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Swift-MappableObj.json"; path = "Supported Languages/Swift-MappableObj.json"; sourceTree = "<group>"; };
 		6835A925263A4C8A00307737 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
@@ -79,10 +81,6 @@
 		C5CA6A4026A58ABB00EE8E71 /* Swift-Codable-Unwrapped.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Swift-Codable-Unwrapped.json"; sourceTree = "<group>"; };
 		C5CA6A4226A58AE600EE8E71 /* Swift-CPBaseModel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Swift-CPBaseModel.json"; path = "Supported Languages/Swift-CPBaseModel.json"; sourceTree = "<group>"; };
 		E20A0DA81A1170F1003B3D62 /* JSONExport-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JSONExport-Bridging-Header.h"; sourceTree = "<group>"; };
-		E20A0DA91A1170F1003B3D62 /* NoodleLineNumberMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoodleLineNumberMarker.h; sourceTree = "<group>"; };
-		E20A0DAA1A1170F1003B3D62 /* NoodleLineNumberMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoodleLineNumberMarker.m; sourceTree = "<group>"; };
-		E20A0DAB1A1170F1003B3D62 /* NoodleLineNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoodleLineNumberView.h; sourceTree = "<group>"; };
-		E20A0DAC1A1170F1003B3D62 /* NoodleLineNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoodleLineNumberView.m; sourceTree = "<group>"; };
 		E21292571A0C58CF0015027D /* SharedConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedConstants.swift; sourceTree = "<group>"; };
 		E2197C5C1A0EAEB900549D03 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		E22BA2C41A162B54005CE143 /* FileContentBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileContentBuilder.swift; sourceTree = "<group>"; };
@@ -116,6 +114,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6581591D2F11F6C800D12F25 /* NoodleLineNumber */ = {
+			isa = PBXGroup;
+			children = (
+				6581591E2F11F7F000D12F25 /* NoodleLineNumberMarker.swift */,
+				6581591F2F11F7F000D12F25 /* NoodleLineNumberView.swift */,
+			);
+			path = NoodleLineNumber;
+			sourceTree = "<group>";
+		};
 		E20A0DA41A117096003B3D62 /* File content generators */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,26 +145,6 @@
 				6835A925263A4C8A00307737 /* NSObject.swift */,
 			);
 			name = Misc;
-			sourceTree = "<group>";
-		};
-		E20A0DA61A1170C3003B3D62 /* Third party libraries */ = {
-			isa = PBXGroup;
-			children = (
-				E20A0DA71A1170E0003B3D62 /* Noodle Line Number */,
-			);
-			name = "Third party libraries";
-			sourceTree = "<group>";
-		};
-		E20A0DA71A1170E0003B3D62 /* Noodle Line Number */ = {
-			isa = PBXGroup;
-			children = (
-				E20A0DA91A1170F1003B3D62 /* NoodleLineNumberMarker.h */,
-				E20A0DAA1A1170F1003B3D62 /* NoodleLineNumberMarker.m */,
-				E20A0DAB1A1170F1003B3D62 /* NoodleLineNumberView.h */,
-				E20A0DAC1A1170F1003B3D62 /* NoodleLineNumberView.m */,
-				E20A0DA81A1170F1003B3D62 /* JSONExport-Bridging-Header.h */,
-			);
-			name = "Noodle Line Number";
 			sourceTree = "<group>";
 		};
 		E251AC5B1A16A434000923D5 /* View Controllers */ = {
@@ -229,13 +216,14 @@
 		E2FA87B71A059AC100648EB6 /* JSONExport */ = {
 			isa = PBXGroup;
 			children = (
-				E20A0DA61A1170C3003B3D62 /* Third party libraries */,
+				6581591D2F11F6C800D12F25 /* NoodleLineNumber */,
 				E20A0DA51A1170B6003B3D62 /* Misc */,
 				E20A0DA41A117096003B3D62 /* File content generators */,
 				E2F07E8F1A0B37F4004A1DAA /* Lang Data Models */,
 				E2F07E8A1A0B3192004A1DAA /* Supported Languages */,
 				E251AC5B1A16A434000923D5 /* View Controllers */,
 				E2FA87BA1A059AC100648EB6 /* AppDelegate.swift */,
+				E20A0DA81A1170F1003B3D62 /* JSONExport-Bridging-Header.h */,
 				E2FA87BE1A059AC100648EB6 /* Images.xcassets */,
 				E2FA87C01A059AC100648EB6 /* Main.storyboard */,
 				E2FA87B81A059AC100648EB6 /* Supporting Files */,
@@ -355,16 +343,16 @@
 				E28631541A158CFA0041B178 /* LangModel.swift in Sources */,
 				E28631551A158CFA0041B178 /* UtilityMethod.swift in Sources */,
 				E2FA87BB1A059AC100648EB6 /* AppDelegate.swift in Sources */,
-				E20A0DAE1A1170F1003B3D62 /* NoodleLineNumberView.m in Sources */,
 				E2FA87DA1A05C1BE00648EB6 /* Property.swift in Sources */,
 				608896441CF278440074CB80 /* Author.swift in Sources */,
 				E230BA2C1A113F8C00AE2054 /* FilePreviewCell.swift in Sources */,
 				E28631531A158CFA0041B178 /* DataType.swift in Sources */,
 				E278F9C61A2149AC00306EFC /* HeaderFileData.swift in Sources */,
 				E278F9CA1A2152D800306EFC /* HeaderFileRepresenter.swift in Sources */,
+				658159202F11F7F000D12F25 /* NoodleLineNumberMarker.swift in Sources */,
+				658159212F11F7F000D12F25 /* NoodleLineNumberView.swift in Sources */,
 				6835A928263A7D8100307737 /* Toast.swift in Sources */,
 				6835A926263A4C8A00307737 /* NSObject.swift in Sources */,
-				E20A0DAD1A1170F1003B3D62 /* NoodleLineNumberMarker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
