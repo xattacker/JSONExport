@@ -16,7 +16,7 @@ class DataType{
 	var intType : String!
 	var longType : String!
 	var stringType : String!
-
+    var dateType: String?
 
 	/**
 	 * Instantiate the instance using the passed dictionary values to set the properties values
@@ -29,6 +29,7 @@ class DataType{
 		intType = dictionary["intType"] as? String
 		longType = dictionary["longType"] as? String
 		stringType = dictionary["stringType"] as? String
+        dateType = dictionary["dateType"] as? String
 	}
 
 	/**
@@ -58,6 +59,12 @@ class DataType{
 		if stringType != nil{
 			dictionary["stringType"] = stringType
 		}
+        
+        if let dateType = self.dateType
+        {
+            dictionary["dateType"] = dateType
+        }
+        
 		return dictionary
 	}
 

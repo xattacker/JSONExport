@@ -21,6 +21,9 @@ class UtilityMethod{
 	var signature : String!
     var forEachPropertyWithSpecialStoringNeeds : String!
 
+    // Optional conditional templates for custom type properties, matched by jsonKeyName or varType
+    var conditionalCustomTypeMappings: [NSDictionary]? // each item: { "matchBy": "jsonKeyName"|"varType", "pattern": String, "template": String }
+
 	/**
 	 * Instantiate the instance using the passed dictionary values to set the properties values
 	 */
@@ -35,8 +38,9 @@ class UtilityMethod{
 		returnStatement = dictionary["returnStatement"] as? String
 		signature = dictionary["signature"] as? String
         forEachPropertyWithSpecialStoringNeeds = dictionary["forEachPropertyWithSpecialStoringNeeds"] as? String
+
+        if let conditionals = dictionary["conditionalCustomTypeMappings"] as? [NSDictionary] {
+            self.conditionalCustomTypeMappings = conditionals
+        }
 	}
-
-	
-
 }

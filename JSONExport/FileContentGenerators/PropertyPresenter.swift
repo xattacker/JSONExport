@@ -84,6 +84,11 @@ class Property : Equatable{
     For array properties, depetermines if the elements type is a custom type
     */
     var elementsAreOfCustomType = false
+
+    /**
+    Optional custom mapping template used during utility methods generation (e.g., mapping). If set, it overrides language default templates for this property.
+    */
+    var customUtilityMappingTemplate: String?
     
     /**
     Returns a valid property declaration using the LangModel.instanceVarDefinition value
@@ -149,10 +154,6 @@ class Property : Equatable{
     convenience init(jsonName: String, nativeName: String, type: String, lang: LangModel){
         self.init(jsonName: jsonName, nativeName: nativeName, type: type, isArray: false, isCustomClass: false, lang: lang)
     }
-    
-    
-    
-    
 }
 
 //For Equatable implementation
@@ -162,5 +163,7 @@ func ==(lhs: Property, rhs: Property) -> Bool
     if !matched{
         matched = (lhs.nativeName == rhs.nativeName && lhs.jsonName == rhs.jsonName && lhs.type == rhs.type && lhs.isCustomClass == rhs.isCustomClass && lhs.isArray == rhs.isArray && lhs.elementsType == rhs.elementsType && lhs.elementsAreOfCustomType == rhs.elementsAreOfCustomType)
     }
+    
     return matched
 }
+

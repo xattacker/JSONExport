@@ -115,6 +115,7 @@ class FileRepresenter{
         fileContent += "\(lang.modelStart)"
         
         appendProperties()
+        applyDeclaredTypeOverridesOnProperties()
         appendSettersAndGetters()
         appendInitializers()
         appendUtilityMethods()
@@ -249,7 +250,6 @@ class FileRepresenter{
         //fileContent += "\n"
         
         for property in properties{
-            
             fileContent += property.toString(false)
         }
     }
@@ -342,6 +342,57 @@ class FileRepresenter{
             return
         }
         fileContent += "\n"
+        
+        func conditionalTemplateIfAny(for property: Property, method: UtilityMethod) -> (template: String, declareVarType: String?)? {
+            guard let conditionals = method.conditionalCustomTypeMappings else { return nil }
+            
+            for item in conditionals {
+                guard let matchBy = item["matchBy"] as? String,
+                      let pattern = item["pattern"] as? String,
+                      let template = item["template"] as? String else { continue }
+                let declared = item["declareVarType"] as? String
+                switch matchBy {
+                case "jsonKeyName":
+                    if property.jsonName == pattern { return (template, declared) }
+                    
+                case "varType":
+                    if property.type == pattern || property.elementsType == pattern { return (template, declared) }
+                    
+                case "jsonValue":
+                    guard let regex = try? NSRegularExpression(pattern: pattern, options: []) else
+                    {
+                        continue
+                    }
+                    
+                    var valueStr: String?
+
+                    if let value = property.sampleValue as? String
+                    {
+                        valueStr = value
+                    }
+                    else if let value = property.sampleValue as? NSNumber
+                    {
+                        valueStr = value.stringValue
+                    }
+                        
+                    if let valueStr = valueStr
+                    {
+                        let range = NSRange(location: 0, length: valueStr.count)
+                        if regex.firstMatch(in: valueStr, options: [], range: range) != nil
+                        {
+                            return (template, declared)
+                        }
+                    }
+                    
+                    continue
+                    
+                default:
+                    continue
+                }
+            }
+            return nil
+        }
+        
         for method in lang.utilityMethods{
             if method.comment != nil{
                 fileContent += method.comment
@@ -350,6 +401,7 @@ class FileRepresenter{
             fileContent += method.bodyStart
             fileContent += method.body
             for property in properties{
+                var declaredOverride: String? = nil
                 var propertyHandlingStr = ""
                 if property.isArray{
                     if propertyTypeIsBasicType(property){
@@ -363,16 +415,26 @@ class FileRepresenter{
                     if lang.basicTypesWithSpecialStoringNeeds != nil && method.forEachPropertyWithSpecialStoringNeeds != nil && lang.basicTypesWithSpecialStoringNeeds.firstIndex(of: property.type) != nil{
                         propertyHandlingStr = method.forEachPropertyWithSpecialStoringNeeds
                     }else{
-                        propertyHandlingStr = method.forEachProperty
-                        if property.isCustomClass{
+                        if let conditional = conditionalTemplateIfAny(for: property, method: method) {
+                            propertyHandlingStr = conditional.template
+                            declaredOverride = conditional.declareVarType
+                        } else if let custom = property.customUtilityMappingTemplate, !custom.isEmpty {
+                            propertyHandlingStr = custom
+                        } else {
                             propertyHandlingStr = method.forEachCustomTypeProperty
                         }
+                        // Removed the immediate replacement of varType by declaredOverride here per instructions
                     }
                     
                 }
                 propertyHandlingStr = propertyHandlingStr.replacingOccurrences(of: varName, with:property.nativeName)
                 propertyHandlingStr = propertyHandlingStr.replacingOccurrences(of: constKeyName, with:property.constName!)
-                propertyHandlingStr = propertyHandlingStr.replacingOccurrences(of: varType, with:property.type)
+                
+                if let declared = declaredOverride, !declared.isEmpty {
+                    propertyHandlingStr = propertyHandlingStr.replacingOccurrences(of: varType, with: declared)
+                } else {
+                    propertyHandlingStr = propertyHandlingStr.replacingOccurrences(of: varType, with: property.type)
+                }
                 
                 propertyHandlingStr = propertyHandlingStr.replacingOccurrences(of: jsonKeyName, with:property.jsonName)
                 
@@ -555,4 +617,76 @@ class FileRepresenter{
         
         return propertyStr
     }
+    
+    private func applyDeclaredTypeOverridesOnProperties() {
+        // Build a small matcher reusing conditional rules from utility methods
+        func declaredTypeOverride(for property: Property) -> String? {
+            // Walk through all utility methods and their conditionals; first match wins
+            for method in lang.utilityMethods {
+                guard let conditionals = method.conditionalCustomTypeMappings else { continue }
+                
+                for item in conditionals {
+                    guard let matchBy = item["matchBy"] as? String,
+                          let pattern = item["pattern"] as? String else { continue }
+                    let declared = item["declareVarType"] as? String
+                    // Only care when a declared override exists
+                    guard let declaredType = declared, !declaredType.isEmpty else { continue }
+                    switch matchBy {
+                    case "jsonKeyName":
+                        if property.jsonName == pattern { return declaredType }
+                    case "varType":
+                        if property.type == pattern || property.elementsType == pattern { return declaredType }
+                    case "jsonValue":
+                        guard let regex = try? NSRegularExpression(pattern: pattern, options: []) else
+                        {
+                            continue
+                        }
+                        
+                        var valueStr: String?
+
+                        if let value = property.sampleValue as? String
+                        {
+                            valueStr = value
+                        }
+                        else if let value = property.sampleValue as? NSNumber
+                        {
+                            valueStr = value.stringValue
+                        }
+                            
+                        if let valueStr = valueStr
+                        {
+                            let range = NSRange(location: 0, length: valueStr.count)
+                            if regex.firstMatch(in: valueStr, options: [], range: range) != nil
+                            {
+                                return declaredType
+                            }
+                        }
+                        
+                        continue
+                        
+                    default:
+                        continue
+                    }
+                }
+            }
+            return nil
+        }
+        
+        // For each property, if there is a declared type override, replace its declaration line in fileContent
+        for property in properties {
+            guard let overrideType = declaredTypeOverride(for: property) else { continue }
+            // Original line as generated in appendProperties
+            let originalLine = property.toString(false)
+            // Build the overridden line by replacing VarType placeholder result
+            var overriddenLine = originalLine
+            // Replace only the first occurrence of the concrete VarType (property.type) with the override
+            // Safer approach: regenerate the declaration pattern by swapping <!VarType!> before toString isn't available here,
+            // so we perform a targeted replacement on the concrete type token.
+            overriddenLine = overriddenLine.replacingOccurrences(of: property.type, with: overrideType)
+            
+            // Apply replacement in fileContent
+            fileContent = fileContent.replacingOccurrences(of: originalLine, with: overriddenLine)
+        }
+    }
 }
+
