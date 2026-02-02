@@ -21,10 +21,7 @@
 		658159382F11FA9500D12F25 /* SharedConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658159332F11FA9500D12F25 /* SharedConstants.swift */; };
 		658159392F11FA9500D12F25 /* FileRepresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658159302F11FA9500D12F25 /* FileRepresenter.swift */; };
 		658159402F11FB2A00D12F25 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6581593D2F11FB2A00D12F25 /* StringExtension.swift */; };
-		658159412F11FB2A00D12F25 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6581593B2F11FB2A00D12F25 /* NSObject+Extension.swift */; };
 		658159422F11FB2A00D12F25 /* SharedUtilityMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6581593C2F11FB2A00D12F25 /* SharedUtilityMethods.swift */; };
-		658159432F11FB2A00D12F25 /* FilePreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6581593A2F11FB2A00D12F25 /* FilePreviewCell.swift */; };
-		658159442F11FB2A00D12F25 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6581593E2F11FB2A00D12F25 /* Toast.swift */; };
 		658159612F11FC7E00D12F25 /* Swift-CoreData.json in Resources */ = {isa = PBXBuildFile; fileRef = 658159552F11FC7E00D12F25 /* Swift-CoreData.json */; };
 		658159622F11FC7E00D12F25 /* Swift-Struct-Gloss.json in Resources */ = {isa = PBXBuildFile; fileRef = 6581595D2F11FC7E00D12F25 /* Swift-Struct-Gloss.json */; };
 		658159632F11FC7E00D12F25 /* SwiftyJSON-Class.json in Resources */ = {isa = PBXBuildFile; fileRef = 6581595F2F11FC7E00D12F25 /* SwiftyJSON-Class.json */; };
@@ -47,10 +44,20 @@
 		658159742F11FC7E00D12F25 /* Kotlin-Android Gson.json in Resources */ = {isa = PBXBuildFile; fileRef = 6581594D2F11FC7E00D12F25 /* Kotlin-Android Gson.json */; };
 		658159752F11FC7E00D12F25 /* Swift-Codable-Unwrapped.json in Resources */ = {isa = PBXBuildFile; fileRef = 658159542F11FC7E00D12F25 /* Swift-Codable-Unwrapped.json */; };
 		658159762F11FC7E00D12F25 /* Swift-CPBaseModel.json in Resources */ = {isa = PBXBuildFile; fileRef = 658159562F11FC7E00D12F25 /* Swift-CPBaseModel.json */; };
-		E2FA87BB1A059AC100648EB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FA87BA1A059AC100648EB6 /* AppDelegate.swift */; };
-		E2FA87BD1A059AC100648EB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FA87BC1A059AC100648EB6 /* ViewController.swift */; };
+		65815A012F120A0000D12F25 /* JSONExportApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65815A002F120A0000D12F25 /* JSONExportApp.swift */; };
+		65815A032F120A0000D12F25 /* LanguageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65815A022F120A0000D12F25 /* LanguageService.swift */; };
+		65815A052F120A0000D12F25 /* CodeGenerationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65815A042F120A0000D12F25 /* CodeGenerationService.swift */; };
+		65815A072F120A0000D12F25 /* FileExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65815A062F120A0000D12F25 /* FileExportService.swift */; };
+		65815A092F120A0000D12F25 /* StatusMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65815A082F120A0000D12F25 /* StatusMessage.swift */; };
+		65815A0B2F120A0000D12F25 /* FilePreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65815A0A2F120A0000D12F25 /* FilePreviewViewModel.swift */; };
+		65815A0D2F120A0000D12F25 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65815A0C2F120A0000D12F25 /* MainViewModel.swift */; };
+		65815A0F2F120A0000D12F25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65815A0E2F120A0000D12F25 /* ContentView.swift */; };
+		65815A152F120A0000D12F25 /* FilePreviewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65815A142F120A0000D12F25 /* FilePreviewItemView.swift */; };
+		65815A192F120A0000D12F25 /* CodeEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65815A182F120A0000D12F25 /* CodeEditorView.swift */; };
+		65815A1B2F120A0000D12F25 /* RenameClassSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65815A1A2F120A0000D12F25 /* RenameClassSheet.swift */; };
+		65815A1D2F120A0000D12F25 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65815A1C2F120A0000D12F25 /* ToastView.swift */; };
+		659DFAF42F30E9B400C46179 /* AppCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DFAF32F30E9B200C46179 /* AppCommands.swift */; };
 		E2FA87BF1A059AC100648EB6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FA87BE1A059AC100648EB6 /* Images.xcassets */; };
-		E2FA87C21A059AC100648EB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2FA87C01A059AC100648EB6 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,11 +74,8 @@
 		658159312F11FA9500D12F25 /* HeaderFileRepresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderFileRepresenter.swift; sourceTree = "<group>"; };
 		658159322F11FA9500D12F25 /* PropertyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyPresenter.swift; sourceTree = "<group>"; };
 		658159332F11FA9500D12F25 /* SharedConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedConstants.swift; sourceTree = "<group>"; };
-		6581593A2F11FB2A00D12F25 /* FilePreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePreviewCell.swift; sourceTree = "<group>"; };
-		6581593B2F11FB2A00D12F25 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		6581593C2F11FB2A00D12F25 /* SharedUtilityMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUtilityMethods.swift; sourceTree = "<group>"; };
 		6581593D2F11FB2A00D12F25 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		6581593E2F11FB2A00D12F25 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		6581594A2F11FC7E00D12F25 /* Java-Android.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Java-Android.json"; sourceTree = "<group>"; };
 		6581594B2F11FC7E00D12F25 /* Java-Android Gson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Java-Android Gson.json"; sourceTree = "<group>"; };
 		6581594C2F11FC7E00D12F25 /* Java-Android Realm.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Java-Android Realm.json"; sourceTree = "<group>"; };
@@ -94,13 +98,23 @@
 		6581595D2F11FC7E00D12F25 /* Swift-Struct-Gloss.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Swift-Struct-Gloss.json"; sourceTree = "<group>"; };
 		6581595E2F11FC7E00D12F25 /* Swift-Struct-Unbox.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Swift-Struct-Unbox.json"; sourceTree = "<group>"; };
 		6581595F2F11FC7E00D12F25 /* SwiftyJSON-Class.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "SwiftyJSON-Class.json"; sourceTree = "<group>"; };
+		65815A002F120A0000D12F25 /* JSONExportApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONExportApp.swift; sourceTree = "<group>"; };
+		65815A022F120A0000D12F25 /* LanguageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageService.swift; sourceTree = "<group>"; };
+		65815A042F120A0000D12F25 /* CodeGenerationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenerationService.swift; sourceTree = "<group>"; };
+		65815A062F120A0000D12F25 /* FileExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileExportService.swift; sourceTree = "<group>"; };
+		65815A082F120A0000D12F25 /* StatusMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMessage.swift; sourceTree = "<group>"; };
+		65815A0A2F120A0000D12F25 /* FilePreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePreviewViewModel.swift; sourceTree = "<group>"; };
+		65815A0C2F120A0000D12F25 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		65815A0E2F120A0000D12F25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		65815A142F120A0000D12F25 /* FilePreviewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePreviewItemView.swift; sourceTree = "<group>"; };
+		65815A182F120A0000D12F25 /* CodeEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditorView.swift; sourceTree = "<group>"; };
+		65815A1A2F120A0000D12F25 /* RenameClassSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenameClassSheet.swift; sourceTree = "<group>"; };
+		65815A1C2F120A0000D12F25 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		659DFAF32F30E9B200C46179 /* AppCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommands.swift; sourceTree = "<group>"; };
 		E20A0DA81A1170F1003B3D62 /* JSONExport-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JSONExport-Bridging-Header.h"; sourceTree = "<group>"; };
 		E2FA87B51A059AC100648EB6 /* JSONExport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSONExport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2FA87B91A059AC100648EB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E2FA87BA1A059AC100648EB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E2FA87BC1A059AC100648EB6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E2FA87BE1A059AC100648EB6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E2FA87C11A059AC100648EB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,21 +165,10 @@
 		6581593F2F11FB2A00D12F25 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				6581593A2F11FB2A00D12F25 /* FilePreviewCell.swift */,
-				6581593B2F11FB2A00D12F25 /* NSObject+Extension.swift */,
 				6581593C2F11FB2A00D12F25 /* SharedUtilityMethods.swift */,
 				6581593D2F11FB2A00D12F25 /* StringExtension.swift */,
-				6581593E2F11FB2A00D12F25 /* Toast.swift */,
 			);
 			path = Util;
-			sourceTree = "<group>";
-		};
-		658159452F11FB7000D12F25 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				E2FA87BC1A059AC100648EB6 /* ViewController.swift */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		658159602F11FC7E00D12F25 /* SupportedLanguages */ = {
@@ -197,6 +200,38 @@
 			path = SupportedLanguages;
 			sourceTree = "<group>";
 		};
+		65815A1E2F120A0000D12F25 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				65815A022F120A0000D12F25 /* LanguageService.swift */,
+				65815A042F120A0000D12F25 /* CodeGenerationService.swift */,
+				65815A062F120A0000D12F25 /* FileExportService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		65815A1F2F120A0000D12F25 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				65815A082F120A0000D12F25 /* StatusMessage.swift */,
+				65815A0A2F120A0000D12F25 /* FilePreviewViewModel.swift */,
+				65815A0C2F120A0000D12F25 /* MainViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		65815A202F120A0000D12F25 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				65815A0E2F120A0000D12F25 /* ContentView.swift */,
+				65815A142F120A0000D12F25 /* FilePreviewItemView.swift */,
+				65815A182F120A0000D12F25 /* CodeEditorView.swift */,
+				65815A1A2F120A0000D12F25 /* RenameClassSheet.swift */,
+				65815A1C2F120A0000D12F25 /* ToastView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E2FA87AC1A059AC100648EB6 = {
 			isa = PBXGroup;
 			children = (
@@ -216,16 +251,18 @@
 		E2FA87B71A059AC100648EB6 /* JSONExport */ = {
 			isa = PBXGroup;
 			children = (
-				658159602F11FC7E00D12F25 /* SupportedLanguages */,
-				6581593F2F11FB2A00D12F25 /* Util */,
+				659DFAF32F30E9B200C46179 /* AppCommands.swift */,
+				65815A002F120A0000D12F25 /* JSONExportApp.swift */,
+				65815A1E2F120A0000D12F25 /* Services */,
+				65815A202F120A0000D12F25 /* Views */,
+				65815A1F2F120A0000D12F25 /* ViewModels */,
 				658159342F11FA9500D12F25 /* FileContentGenerators */,
-				6581591D2F11F6C800D12F25 /* NoodleLineNumber */,
 				658159282F11FA1400D12F25 /* LangDataModels */,
-				658159452F11FB7000D12F25 /* ViewController */,
-				E2FA87BA1A059AC100648EB6 /* AppDelegate.swift */,
+				6581591D2F11F6C800D12F25 /* NoodleLineNumber */,
+				6581593F2F11FB2A00D12F25 /* Util */,
+				658159602F11FC7E00D12F25 /* SupportedLanguages */,
 				E20A0DA81A1170F1003B3D62 /* JSONExport-Bridging-Header.h */,
 				E2FA87BE1A059AC100648EB6 /* Images.xcassets */,
-				E2FA87C01A059AC100648EB6 /* Main.storyboard */,
 				E2FA87B81A059AC100648EB6 /* Supporting Files */,
 			);
 			path = JSONExport;
@@ -322,7 +359,6 @@
 				658159742F11FC7E00D12F25 /* Kotlin-Android Gson.json in Resources */,
 				658159752F11FC7E00D12F25 /* Swift-Codable-Unwrapped.json in Resources */,
 				658159762F11FC7E00D12F25 /* Swift-CPBaseModel.json in Resources */,
-				E2FA87C21A059AC100648EB6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,11 +369,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2FA87BD1A059AC100648EB6 /* ViewController.swift in Sources */,
-				E2FA87BB1A059AC100648EB6 /* AppDelegate.swift in Sources */,
+				65815A012F120A0000D12F25 /* JSONExportApp.swift in Sources */,
+				65815A032F120A0000D12F25 /* LanguageService.swift in Sources */,
+				65815A052F120A0000D12F25 /* CodeGenerationService.swift in Sources */,
+				65815A072F120A0000D12F25 /* FileExportService.swift in Sources */,
+				65815A092F120A0000D12F25 /* StatusMessage.swift in Sources */,
+				65815A0B2F120A0000D12F25 /* FilePreviewViewModel.swift in Sources */,
+				65815A0D2F120A0000D12F25 /* MainViewModel.swift in Sources */,
+				65815A0F2F120A0000D12F25 /* ContentView.swift in Sources */,
+				65815A152F120A0000D12F25 /* FilePreviewItemView.swift in Sources */,
+				65815A192F120A0000D12F25 /* CodeEditorView.swift in Sources */,
+				65815A1B2F120A0000D12F25 /* RenameClassSheet.swift in Sources */,
+				65815A1D2F120A0000D12F25 /* ToastView.swift in Sources */,
 				658159292F11FA1400D12F25 /* UtilityMethod.swift in Sources */,
 				658159352F11FA9500D12F25 /* PropertyPresenter.swift in Sources */,
 				658159362F11FA9500D12F25 /* HeaderFileRepresenter.swift in Sources */,
+				659DFAF42F30E9B400C46179 /* AppCommands.swift in Sources */,
 				658159372F11FA9500D12F25 /* FileContentBuilder.swift in Sources */,
 				658159382F11FA9500D12F25 /* SharedConstants.swift in Sources */,
 				658159392F11FA9500D12F25 /* FileRepresenter.swift in Sources */,
@@ -348,26 +395,12 @@
 				6581592E2F11FA1400D12F25 /* LangModel.swift in Sources */,
 				658159202F11F7F000D12F25 /* NoodleLineNumberMarker.swift in Sources */,
 				658159402F11FB2A00D12F25 /* StringExtension.swift in Sources */,
-				658159412F11FB2A00D12F25 /* NSObject+Extension.swift in Sources */,
 				658159422F11FB2A00D12F25 /* SharedUtilityMethods.swift in Sources */,
-				658159432F11FB2A00D12F25 /* FilePreviewCell.swift in Sources */,
-				658159442F11FB2A00D12F25 /* Toast.swift in Sources */,
 				658159212F11F7F000D12F25 /* NoodleLineNumberView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		E2FA87C01A059AC100648EB6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E2FA87C11A059AC100648EB6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E2FA87CF1A059AC100648EB6 /* Debug */ = {
@@ -418,7 +451,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -470,7 +503,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -486,10 +519,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				INFOPLIST_FILE = JSONExport/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ahmed.ali.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "JSONExport/JSONExport-Bridging-Header.h";
@@ -506,10 +539,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				INFOPLIST_FILE = JSONExport/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ahmed.ali.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "JSONExport/JSONExport-Bridging-Header.h";

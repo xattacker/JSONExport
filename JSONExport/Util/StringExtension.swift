@@ -96,6 +96,18 @@ extension String{
         }else{
             return self
         }
-        
+
+    }
+
+    var isValidClassName: Bool {
+        var result = false
+
+        if self.count > 0 {
+            let regex = #"[A-Z]+[A-Z0-9a-z_]*"#
+            let regexPred = NSPredicate(format: "SELF MATCHES %@", regex)
+            result = regexPred.evaluate(with: self)
+        }
+
+        return result
     }
 }
